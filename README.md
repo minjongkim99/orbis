@@ -31,6 +31,7 @@ Format : orbis -p <target_program> -t <time_budget> -d <output_dir> <path_to_bc_
 + -t : Time Budget (seconds)
 + -d : Output Directory
 
+* If the directory specified by the \texttt{-d} option already exists, Orbis removes the existing directory and creates a new one.
 
 Then, you will see logs as follows.
 ```bash
