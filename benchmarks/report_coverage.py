@@ -79,6 +79,13 @@ def graph_generator(time_budget, coverages, labels, name, graph):
     print("[INFO] ParaSuit : The branch coverage results were saved in “%s” file." % (graph))
 
 
+def table_generator(results, benchmark):
+    print(f"| {'output_dir':<12} | {'coverage':<8} |")
+    print(f"| {'-' * 12} | {'-' * 8} |")
+
+    for output_dir, coverage in results.items():
+        print(f"| {output_dir:<12} | {coverage:<8} |")
+
 
 def main(*argv):
     parser = ArgumentParser()
@@ -90,14 +97,21 @@ def main(*argv):
                         help='path to save coverage graph (default=coverage_result.png)')
     parser.add_argument('--budget', default=36000, type=int, metavar='TIME',
                         help='time budget of the coverage graph (default=36000(s))')
+    parser.add_argument('--no-figure', default=False, type=bool, metavar='BOOL',
+                        help='flag to disable figure generation')
+    parser.add_argument('--no-table', default=False, type=bool, metavar='BOOL',
+                        help='flag to disable table generation')
 
     args = parser.parse_args(argv)
 
     csv_files = []
     results = []
+    csv_dict = dict()
+    table_results = dict()
 
     for file in args.directories:
         csv_files.append("./%s/coverage.csv" % (file))
+        csv_dict["./%s/coverage.csv" % (file)] = file
     
     max_time = check_max(csv_files) + 1
     
@@ -105,8 +119,12 @@ def main(*argv):
         result = [0] * max_time
         result = make_coverage_every_second(csv, result)
         results.append(result)
-
-    graph_generator(args.budget, results, args.directories, args.benchmark, args.graph)
+        table_results[csv_dict[csv]] = result[-1]
+    
+    if not args.no_figure:
+        graph_generator(args.budget, results, args.directories, args.benchmark, args.graph)
+    if not args.no_table:
+        table_generator(table_results, args.benchmark)
 
 
 if __name__ == '__main__':
