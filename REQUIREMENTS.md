@@ -31,6 +31,7 @@ docker run --rm -it --ulimit stack=-1:-1 minjongkim99/orbis-ase26:v1.3 /bin/bash
 - Smoke test: expected to complete within 10 minutes
 - Pulling the pre-built Docker image: 2 minutes
 - Symbolic-execution budget for the smoke test: 6 minutes
+- The full experiments have higher memory requirements than the smoke test (e.g., 3.1 MB for the smoke test vs. 153 MB for the full experiment).
 
 ## Known Limitations
 - The artifact is primarily tested on x86-64 Linux.
