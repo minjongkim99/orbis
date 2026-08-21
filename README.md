@@ -45,7 +45,8 @@ When the time budget expires without error, you can see the following output.
 [INFO] ORBiS : Iteration: 3 Iteration budget: 120 Total budget: 360 Time elapsed: 360 Used argument: -l Coverage: 2662 
 [INFO] ORBiS : Testing done. Achieve 2662 coverage.
 ```
-
+* For the last iteration, to ensure that the total time budget set by the user is not exceeded, if the iteration budget is bigger than (total budget - elapsed), the budget for that iteration is set to (total budget - elapsed). Therefore, the time budget for the last iteration may be smaller than the actual iteration budget setting.
+* Since the option configuration is constructed probabilistically, the log for each iteration may differ, and accordingly, the coverage logged in each iteration may also differ.
 
 ## Reporting Results
 ### Branch Coverage
