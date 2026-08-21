@@ -47,7 +47,7 @@ Format : orbis -p <target_program> -t <time_budget> -d <output_dir> <path_to_bc_
 When the experiment is completed, ORBiS provides a line graph showing how many branches were covered in each time budget section through the 'report_coverage.py' program. If you run the command below, ORBiS returns the graph by creating a 'coverage_result.png' file in the same directory.
 ```
 /orbis/benchmarks$ python3 report_coverage.py --benchmark grep-3.4 ORBiS_TEST
-usage: report_coverage.py [-h] [--benchmark STR] [--graph PATH] [--budget TIME] [DIRS ...]
+usage: report_coverage.py [-h] [--benchmark STR] [--graph PATH] [--budget TIME] [--no-figure BOOL] [--no-table BOOL] [DIRS ...]
 ```
 
 If you want to return multiple results in a single graph, just list the names of the directories, such as:
@@ -55,10 +55,17 @@ If you want to return multiple results in a single graph, just list the names of
 /orbis/benchmarks$ python3 report_coverage.py --benchmark grep-3.4 ORBiS_TEST KLEEdefault ...
 ```
 
+It also reports the accumulated coverage results for the input directories as the following table.
+```
+| output_dir   | coverage |
+| ------------ | -------- |
+| Orbis_TEST   | 2662     |
+
+
 ### Bug-Finding
 ORBiS also provides the "report_bugs.py" program to extract test-cases that cause system errors among those generated through the experiment. When you execute the command below, ORBiS automatically detects bug-triggering test cases. As a result of execution, ORBiS returns the test-case causing the bug, its arguments, the system crash signal, and the location (file name and line) of the code where the bug occurs.
 ```
-/orbis/benchmarks$ python3 report_bugs.py --benchmark grep-3.4 ORBiS
+/orbis/benchmarks$ python3 report_bugs.py --benchmark grep-3.4 ORBiS_TEST
 ```
 
 Similar to branch coverage, bug-finding also allows you to search multiple directories at once by simply listing the directories.
