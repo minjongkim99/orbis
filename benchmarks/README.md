@@ -60,7 +60,7 @@ It also reports the accumulated coverage results for the input directories as th
 | output_dir   | coverage |
 | ------------ | -------- |
 | Orbis_TEST   | 2662     |
-
+```
 
 ### Bug-Finding
 ORBiS also provides the "report_bugs.py" program to extract test-cases that cause system errors among those generated through the experiment. When you execute the command below, ORBiS automatically detects bug-triggering test cases. As a result of execution, ORBiS returns the test-case causing the bug, its arguments, the system crash signal, and the location (file name and line) of the code where the bug occurs.
