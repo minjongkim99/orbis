@@ -54,8 +54,6 @@ When the time budget expires without error, you can see the following output.
 ### Branch Coverage
 If you want to get results about how many branches Orbis has covered, run the following command.
 ```bash
-# Needs 'matplotlib' package --> pip3 install matplotlib
-/orbis/benchmarks $ pip3 install matplotlib
 /orbis/benchmarks $ python3 report_coverage.py --benchmark grep-3.4 Orbis_TEST 
 ```
 
@@ -63,7 +61,12 @@ And if you want to compare multiple results in a graph, just list the directory 
 ```bash
 /orbis/benchmarks $ python3 report_coverage.py --benchmark grep-3.4 Orbis_TEST1 Orbis_TEST2 ...
 ```
-
+It also reports the accumulated coverage results for the input directories as the following table.
+```
+| output_dir   | coverage |
+| ------------ | -------- |
+| Orbis_TEST   | 2662     |
+```
 
 ### Bug Finding
 If you want to check information about what bugs Orbis has found, run the following command.
@@ -150,6 +153,8 @@ usage: report_coverage.py [-h] [--benchmark STR] [--graph PATH] [--budget TIME] 
 | `--benchmark` | Name of benchmark & version |
 | `--graph`     | Path to save coverage graph |
 | `--budget`    | Time budget of the coverage graph |
+| `--no-figure` | Flag to disable figure generation |
+| `--no-table`  | Flag to disable table generation |
 | `DIRS`        | Names of directories to draw figure |
 
 
