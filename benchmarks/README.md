@@ -59,7 +59,7 @@ It also reports the accumulated coverage results for the input directories as th
 ```
 | output_dir   | coverage |
 | ------------ | -------- |
-| Orbis_TEST   | 2662     |
+| ORBiS_TEST   | 2662     |
 ```
 
 ### Bug-Finding
