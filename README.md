@@ -145,7 +145,7 @@ usage: report_bugs.py [-h] [--benchmark STR] [--table PATH] [DIRS ...]
 ### /benchmarks/report_coverage.py
 ```
 /orbis/benchmarks$ python3 report_coverage.py --help
-usage: report_coverage.py [-h] [--benchmark STR] [--graph PATH] [--budget TIME] [DIRS ...]
+usage: report_coverage.py [-h] [--benchmark STR] [--graph PATH] [--budget TIME] [--no-figure BOOL] [--no-table BOOL] [DIRS ...]
 ```
 | Option | Description |
 |:------:|:------------|
