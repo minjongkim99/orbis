@@ -46,7 +46,8 @@ When the time budget expires without error, you can see the following output.
 [INFO] ORBiS : Testing done. Achieve 2662 coverage.
 ```
 * For the last iteration, to ensure that the total time budget set by the user is not exceeded, if the iteration budget is bigger than (total budget - elapsed), the budget for that iteration is set to (total budget - elapsed). Therefore, the time budget for the last iteration may be smaller than the actual iteration budget setting.
-* Since option configurations are constructed probabilistically, the configurations constructed in each iteration may differ across Orbis runs, and accordingly, the coverage logged in each iteration may also differ.
+* Since option configurations are constructed probabilistically, the configurations constructed in each iteration may differ across Orbis runs.
+* Due to the probabilistic construction of option arguments, smoke-test coverage results may vary. However, the 24-hour full experiments produce stable results.
 
 ## Reporting Results
 ### Branch Coverage
