@@ -43,7 +43,7 @@ Then, you will see logs as follows.
 
 When the time budget expires without error, you can see the following output.
 ```bash
-[INFO] ORBiS : Iteration: 3 Iteration budget: 120 Total budget: 360 Time elapsed: 360 Used argument: -l Coverage: 2662 
+[INFO] ORBiS : Iteration: 3 Iteration budget: 84 Total budget: 360 Time elapsed: 360 Used argument: -l Coverage: 2662 
 [INFO] ORBiS : Testing done. Achieve 2662 coverage.
 ```
 * For the last iteration, if the configured iteration budget exceeds the remaining time (i.e., total budget - elapsed time), it is adjusted to the remaining time to ensure that the user-specified total budget is not exceeded. Therefore, the last iteration may run with a smaller budget than configured.
